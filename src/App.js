@@ -9,7 +9,7 @@ setTarefaTemp('')
   }
   return (
     <div className="App">
-      <input type="text" value={tarefaTemp} onChange={(evento)=>setTarefaTemp(evento.target.value)} />
+      <input data-testid='' type="text" value={tarefaTemp} onChange={(evento)=>setTarefaTemp(evento.target.value)} />
       <button onClick={cadastrarTarefas} type="button">cadastrar</button>
       <ul>
         {tarefas.map(tarefa=>(<li>{tarefa}</li>))}
