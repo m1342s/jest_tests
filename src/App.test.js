@@ -8,6 +8,12 @@ describe('Testes para o componente principal', () => {
   })
   test('Deve adicionar "estudar react" na lista',()=>{
     render(<App/>)
-    fireEvent.change()
+    fireEvent.change(screen.getAllByTestId('campo-tarefa'),{
+      target:{
+        value:"Estudar react"
+      }
+    })
+    fireEvent.click(screen.getByTestId('btn-cadastrar'))
+    expect(screen.getByText("Estudar react")).toBeInTheDocument()
   })
 })
